@@ -78,7 +78,7 @@ btnHold.addEventListener("click", function () {
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
-    if (scores[activePlayer] >= 10) {
+    if (scores[activePlayer] >= 100) {
       //Finish the Game
       playing = false;
       diceEl.classList.add("hidden");
@@ -307,3 +307,15 @@ var confettiRender = function () {
     confetti.clear();
   });
 };
+
+const popup = document.querySelector(".popup");
+const btnOpenPopup = document.querySelector(".btn--showPopup");
+const btnClosePopup = document.querySelector(".close-popup");
+
+btnOpenPopup.addEventListener("click", function () {
+  popup.classList.add("show");
+});
+
+btnClosePopup.addEventListener("click", function () {
+  popup.classList.remove("show");
+});
